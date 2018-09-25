@@ -14,6 +14,11 @@
 
 }
 @font-face {
+    font-family: 'OpenSans_Light';
+    src: url('../fonts/OpenSans-Light.ttf');
+
+}
+@font-face {
     font-family: 'OpenSans_Reg';
     src: url('../fonts/OpenSans-Regular.woff');
 
@@ -38,6 +43,9 @@ html{
 }
 .zero-padding{
   padding: 0px !important;
+}
+body{
+      overflow-x: hidden;
 }
 h1{
     color: #383035;
@@ -518,10 +526,14 @@ ul.timeline > li:before {
 header{
   position: fixed;
     z-index: 1000;
-top: 0px;
-width: 100%;
-padding: 7px;
-background-color: rgba(0,0,0,0.5);
+    top: 0px;
+    width: 100%;
+    padding: 10px 0px;
+    background-color: #fff;
+      border-bottom: 3px solid #d71820;
+}
+._logo-area img{
+  width: 100%;
 }
 .navigation{
   text-align: right;
@@ -529,16 +541,70 @@ background-color: rgba(0,0,0,0.5);
 }
 .hero-section{
   position: relative;
-  height: 100vh;
-  overflow: hidden;
+  height: 80vh;
+  top: 80px;
+  background: linear-gradient(0deg,rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(../images/building.jpg);
+  background-position: right bottom;
+  background-size: 100%;
+
 }
 .hero-section video{
   width: 100%;
 }
-nav ul li{
-  display: block;
-  list-style: none;
+.hero-section:after, .hero-section:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 50%;
+    z-index: 100;
+    border-bottom: 100px solid #d71820;
+    -moz-transform: rotate(0.000001deg);
+    -webkit-transform: rotate(0.000001deg);
+    -o-transform: rotate(0.000001deg);
+    -ms-transform: rotate(0.000001deg);
+    transform: rotate(0.000001deg);
 }
+.hero-section:before {
+    right: 50%;
+    content: '';
+    border-right: 680px solid transparent;
+    border-left: 1000px solid #000;
+}
+.hero-section:after {
+    left: 50%;
+    content: '';
+    border-left: 680px solid transparent;
+    border-right: 1000px solid #fff;
+}
+nav ul {
+    margin-top: 10px;
+}
+nav ul li{
+  display: inline-block;
+  list-style: none;
+  padding: 0px;
+}
+nav ul li:after{
+  content:'|';
+      padding: 0px 15px;
+}
+nav ul li:last-child:after{
+  content:'';
+      padding: 0px;
+}
+nav ul li a i{
+  color: #d71820;
+font-size: 18px;
+}
+nav ul li a{
+  color: #505050;
+font-family: 'OpenSans_Reg';
+font-weight: bold;
+}
+nav ul li a span{
+  color: #d71820;
+}
+
 .overlay{
 
   position: absolute;
@@ -554,6 +620,7 @@ nav ul li{
   z-index: 20;
   left: 50%;
   transform: translateX(-50%);
+  display: none;
 }
 .scroll-icon i{
     color: #fff;
@@ -572,25 +639,36 @@ nav ul li{
   text-align: center;
   letter-spacing: 0.5px;
   word-spacing: 10px;
-    text-shadow: 1px 1px 2px #000;
+  text-shadow: 1px 1px 2px #000;
+  font-family: 'OpenSans_Reg';
 }
 .content h1 span{
-  color: #d11219;
+  font-family: 'OpenSans_Bold';
+  color: #fff !important;
 }
 .content p{
-  color: #fff;
-      text-align: center;
-      letter-spacing: 0.5px;
-      word-spacing: 2px;
-      font-weight: bold;
-      font-family: 'OpenSans_Bold';
-      font-size: 20px;
-      text-shadow: 1px 1px 2px #000;
+  color: #d6d6d6;
+  text-align: center;
+  letter-spacing: 0.5px;
+  word-spacing: 2px;
+  font-family: 'OpenSans_Light';
+  font-size: 20px;
+  margin-top: 10px;
 }
 .content p span{
   color: #ffbc1c;
+    font-family: 'OpenSans_Reg';
 }
+.btn-request{
+  color: #fff;
+  background-color: #d71820;
+  margin-top: 15px;
+}
+.btn-request:hover{
+  color: #333;
+  background-color: #fcfcfc;
 
+}
 .solutions{
   background: linear-gradient(0deg,rgba(10,10,20,0.7),rgba(20,20,22,0.7)),url(../images/services.jpg) no-repeat fixed;
       background-size: cover;
@@ -700,11 +778,35 @@ font-family: 'OpenSans_Bold';
 }
 .about{
   padding: 5em;
-  background-color: #fafafa;
+  background-color: #d71820;
+  position: relative;
+  top: 80px;
+  padding-bottom: 10em;
+}
+.about{
+  padding: 5em;
+  background-color: #d71820;
+  position: relative;
+  top: 80px;
+  padding-bottom: 10em;
+}
+.about .box:before {
+    content: '';
+    font-family: "Font Awesome 5 Free";
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 60px;
+    width: 100%;
+    height: 100%;
 }
 .about .goals .box{
-width: 30%;
+  width: 30%;
       min-height: 145px;
+      background: transparent;
+      border: 1px solid #fff;
+      box-shadow: none;
 }
 .about h2{
   font-family: 'bebas';
@@ -713,6 +815,7 @@ width: 30%;
     line-height: 60px;
     font-size: 38px;
     text-align: left;
+    color: #fff;
 }
 .about h2 span{
   background-color: #ffbc1c;
